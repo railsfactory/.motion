@@ -11,5 +11,5 @@ but when I test running over 100 projects, dont want to duplicate certain things
 inspired from rake and sake tasks
 
 
-PATH=~/.motion/bin:$PATH
-export PATH
+      PATH=~/.motion/bin:$PATH
+      export PATH
