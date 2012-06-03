@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+
+
+require 'rake'
+Rake.load_rakefile("./Rakefile")
+#overrides
+Rake.load_rakefile("~/.motion/Rakefile")
+
+
+files = App.configs[:development].files
+files << File.expand_path("~/.motion/helpers/helper.rb")
+
+App.configs[:development].files= files 
+
+
+Rake.application.invoke_task("default")
