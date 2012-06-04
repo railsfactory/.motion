@@ -20,10 +20,8 @@ end
 
 files = App.configs[:development].files
   Dir[File.expand_path("~/.motion/helpers/*.rb")].each {|file| 
-    files << file  # File.expand_path(file)
-    # puts file
+    files << File.expand_path(file)
     }
+
 App.configs[:development].files= files 
 
-
-Rake.application.invoke_task("default")
