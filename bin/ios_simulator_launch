@@ -1,0 +1,5 @@
+#!/usr/bin/osascript
+tell application "iPhone Simulator"
+    activate
+end tell
+

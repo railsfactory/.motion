@@ -1,0 +1,33 @@
+#!/usr/bin/osascript
+
+on run argv
+
+set selectedDevice to item 1 of argv as string
+
+set thePListFolderPath to path to preferences folder from user domain as string
+set thePListPath to thePListFolderPath & "com.apple.iphonesimulator.plist"
+tell application "System Events"
+    tell property list file thePListPath
+        tell contents
+            set value of property list item "SimulateDevice" to selectedDevice
+        end tell
+    end tell
+end tell
+
+end run
+
+
+#set selectedDevices to choose from list {"iPhone", "iPhone (Retina)", "iPad"} with prompt "Choose device type:" default items {"iPhone"} without multiple selections allowed
+#if selectedDevices is not false then
+#	set selectedDevice to item 1 of selectedDevices as string
+#	set thePListFolderPath to path to preferences folder from user domain as string
+#	set thePListPath to thePListFolderPath & "com.apple.iphonesimulator.plist"
+#
+#	tell application "System Events"
+#		tell property list file thePListPath
+#			tell contents
+#				set value of property list item "SimulateDevice" to selectedDevice
+#			end tell
+#		end tell
+#	end tell
+#end if
